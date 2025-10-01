@@ -21,6 +21,13 @@ RUN apt update && apt upgrade -y && \
     make \
     pkg-config \
     ffmpeg \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavfilter-dev \
+    libavformat-dev \
+    libavutil-dev \
+    libswresample-dev \
+    libswscale-dev \
     zlib1g-dev && \
     apt autoremove && apt clean && \
     rm -rf /var/lib/apt/lists/*
