@@ -20,6 +20,7 @@ RUN apt update && apt upgrade -y && \
     m4 \
     make \
     pkg-config \
+    ffmpeg \
     zlib1g-dev && \
     apt autoremove && apt clean && \
     rm -rf /var/lib/apt/lists/*
@@ -31,7 +32,7 @@ RUN groupadd -g 999 radio && \
     chown -R radio /etc/liquidsoap /music
 
 ARG LIQUIDSOAP_VERSION
-ARG OPAM_PACKAGES="liquidsoap${LIQUIDSOAP_VERSION:+.$LIQUIDSOAP_VERSION} taglib mad lame vorbis cry samplerate"
+ARG OPAM_PACKAGES="liquidsoap${LIQUIDSOAP_VERSION:+.$LIQUIDSOAP_VERSION} taglib mad lame vorbis cry samplerate ffmpeg"
 
 USER radio
 
